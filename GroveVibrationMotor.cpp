@@ -1,15 +1,14 @@
 #include "GroveVibrationMotor.h"
 
-GroveVibrationMotor::GroveVibrationMotor(GrovePin pins) {
-	this->_pinMotor = pins.pin1;
-	this->_state = false;
-}
+GroveVibrationMotor::GroveVibrationMotor() {}
 
 void GroveVibrationMotor::_refresh() {
 	digitalWrite(this->_pinMotor, this->_state);
 }
 
-void GroveVibrationMotor::initialize() {	
+void GroveVibrationMotor::initialize(GrovePin pins) {
+	this->_pinMotor = pins.pin1;
+	this->_state = false;	
 	pinMode(this->_pinMotor, OUTPUT);
 	this->_refresh();
 }

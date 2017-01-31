@@ -5,13 +5,12 @@ Vibration Motor Library for Arduino + Grove shield
 
 ## Example
 ```c++
-#include <Grove.h>
 #include <GroveVibrationMotor.h>
 
-GroveVibrationMotor motor(GROVE_D8);
+GroveVibrationMotor motor;
 
 void setup() {
-  motor.initialize();
+  motor.initialize(GROVE_D8);
   Serial.begin(9200);
 }
 
@@ -22,12 +21,12 @@ void loop() {
 ```
 
 ## Documentation
-###`GroveVibrationMotor(GrovePin pins)`
+
+###`void initialize(GrovePin pins)`
+Initialize the sensor before using it.
+
 Parameters:
 - `pins`: Must be a digital socket (GROVE_D2 to GROVE_D8)
-
-###`void initialize()`
-Initialize the sensor before using it.
 
 ###`void turnOn()`
 Turn the motor on

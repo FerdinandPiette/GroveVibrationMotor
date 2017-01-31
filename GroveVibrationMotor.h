@@ -13,9 +13,9 @@ class GroveVibrationMotor {
 		void _refresh();
 		
 	public:
-		GroveVibrationMotor(GrovePin pins);
+		GroveVibrationMotor();
 		virtual ~GroveVibrationMotor() {};
-		void initialize();
+		void initialize(GrovePin pins);
 		void turnOn();
 		void turnOff();
 		void toggle();
